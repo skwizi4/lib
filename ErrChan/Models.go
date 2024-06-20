@@ -1,7 +1,7 @@
 package ErrChan
 
 import (
-	"main.go/pkg/logs"
+	"github.com/skwizi4/lib/logs"
 )
 
 // Channel - структура для обработки ошибок
