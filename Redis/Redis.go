@@ -4,7 +4,6 @@ import (
 	"context"
 	"fmt"
 	"github.com/redis/go-redis/v9"
-	"main.go/internal/Config"
 )
 
 type Redis interface {
@@ -17,11 +16,11 @@ type DataBase struct {
 	client *redis.Client
 }
 
-func New(cfg Config.Config) Redis {
+func New(Password string, DB int, Addr string) Redis {
 	client := redis.NewClient(&redis.Options{
-		Addr:     cfg.Redis.Addr,
-		Password: cfg.Redis.Password,
-		DB:       cfg.Redis.DB,
+		Addr:     Addr,
+		Password: Password,
+		DB:       DB,
 	})
 
 	return DataBase{
