@@ -11,6 +11,7 @@ type Redis interface {
 	GetString(key string) (string, error)
 	GetBytes(key string) ([]byte, error)
 	SetField(key string, value string) error
+	Delete(key string) error
 }
 type DataBase struct {
 	client *redis.Client
