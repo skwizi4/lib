@@ -66,3 +66,9 @@ func (c DataBase) SetField(key string, value string) error {
 	}
 	return nil
 }
+
+func (r *Redis) Delete(key string) error {
+	_, err := r.client.Del(r.ctx, key).Result()
+	return err
+}
+
